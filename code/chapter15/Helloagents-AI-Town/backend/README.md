@@ -1,73 +1,73 @@
-# 赛博小镇 - FastAPI后端
+# 赛博小镇 - FastAPI 后端
 
-基于HelloAgents框架的AI NPC对话系统后端服务。
+基于 HelloAgents 框架的 AI NPC 对话系统后端服务。
 
 ## 🎯 功能特性
 
 ### 核心功能
-- ✅ **单个NPC对话**: 玩家与NPC实时对话,使用独立Agent处理
-- ✅ **批量对话生成**: 定时批量生成所有NPC的自主对话,降低API成本66%
-- ✅ **状态管理**: 自动更新和缓存NPC状态
-- ✅ **CORS支持**: 支持Godot HTML5导出跨域访问
+- ✅ **单个 NPC 对话**: 玩家与 NPC 实时对话，使用独立 Agent 处理
+- ✅ **批量对话生成**: 定时批量生成所有 NPC 的自主对话，降低 API 成本 66%
+- ✅ **状态管理**: 自动更新和缓存 NPC 状态
+- ✅ **CORS 支持**: 支持 Godot HTML5 导出跨域访问
 
-### NPC角色
-1. **张三** - Python工程师 (工位区)
+### NPC 角色
+1. **张三** - Python 工程师 (工位区)
 2. **李四** - 产品经理 (会议室)
-3. **王五** - UI设计师 (休息区)
+3. **王五** - UI 设计师 (休息区)
 
 ## 📦 安装依赖
 
-### 1. 安装Python依赖
+### 1. 安装 Python 依赖
 ```bash
 cd backend
 pip install -r requirements.txt
 ```
 
 ### 2. 配置环境变量
-创建`.env`文件或设置环境变量:
+创建`.env`文件或设置环境变量：
 
-**注意**: 如果不配置API密钥,系统将使用预设对话模式运行。
+**注意**: 如果不配置 API 密钥，系统将使用预设对话模式运行。
 
 ## 🚀 启动服务
 
-### 方法1: 直接运行
+### 方法 1: 直接运行
 ```bash
 python main.py
 ```
 
-### 方法2: 使用uvicorn
+### 方法 2: 使用 uvicorn
 ```bash
 uvicorn main:app --reload --host 0.0.0.0 --port 8000
 ```
 
-启动成功后访问:
-- **API文档**: http://localhost:8000/docs
+启动成功后访问：
+- **API 文档**: http://localhost:8000/docs
 - **根路径**: http://localhost:8000/
 
-## 🧪 测试API
+## 🧪 测试 API
 
-运行测试脚本:
+运行测试脚本：
 ```bash
 python test_api.py
 ```
 
-测试内容包括:
+测试内容包括：
 1. ✅ 根路径访问
 2. ✅ 健康检查
-3. ✅ 获取NPC列表
-4. ✅ 获取NPC状态
-5. ✅ 与NPC对话
-6. ✅ 获取NPC详情
+3. ✅ 获取 NPC 列表
+4. ✅ 获取 NPC 状态
+5. ✅ 与 NPC 对话
+6. ✅ 获取 NPC 详情
 7. ✅ 强制刷新状态
 
-## 📡 API接口
+## 📡 API 接口
 
-### 1. 获取NPC列表
+### 1. 获取 NPC 列表
 ```http
 GET /npcs
 ```
 
-响应示例:
+响应示例：
 ```json
 {
   "npcs": [
@@ -83,7 +83,7 @@ GET /npcs
 }
 ```
 
-### 2. 与NPC对话
+### 2. 与 NPC 对话
 ```http
 POST /chat
 Content-Type: application/json
@@ -94,7 +94,7 @@ Content-Type: application/json
 }
 ```
 
-响应示例:
+响应示例：
 ```json
 {
   "npc_name": "张三",
@@ -105,12 +105,12 @@ Content-Type: application/json
 }
 ```
 
-### 3. 获取NPC状态
+### 3. 获取 NPC 状态
 ```http
 GET /npcs/status
 ```
 
-响应示例:
+响应示例：
 ```json
 {
   "dialogues": {
@@ -146,16 +146,16 @@ backend/
 ## 🎨 核心设计
 
 ### 批量对话生成
-为了降低API成本和延迟,系统采用批量生成策略:
+为了降低 API 成本和延迟，系统采用批量生成策略：
 
 **传统方式**:
-- 3个NPC × 每30秒 = 6次API调用/分钟
-- 每小时: 360次调用
+- 3 个 NPC × 每 30 秒 = 6 次 API 调用/分钟
+- 每小时： 360 次调用
 
 **批量方式**:
-- 1次批量调用/30秒 = 2次API调用/分钟
-- 每小时: 120次调用
-- **成本降低66%!**
+- 1 次批量调用/30 秒 = 2 次 API 调用/分钟
+- 每小时： 120 次调用
+- **成本降低 66%!**
 
 ### 工作流程
 ```
@@ -185,30 +185,30 @@ OPENAI_MODEL = "gpt-4o-mini"  # 推荐使用mini版本降低成本
 
 ### 调整更新频率
 修改`config.py`中的`NPC_UPDATE_INTERVAL`:
-- 开发测试: 10秒
-- 正式运行: 30-60秒
-- 低成本模式: 120秒
+- 开发测试： 10 秒
+- 正式运行： 30-60 秒
+- 低成本模式： 120 秒
 
 ## 🐛 故障排查
 
-### 问题1: 启动失败
+### 问题 1: 启动失败
 ```
 ❌ LLM初始化失败
 ```
-**解决**: 检查OPENAI_API_KEY环境变量是否设置
+**解决**: 检查 OPENAI_API_KEY 环境变量是否设置
 
-### 问题2: 对话无响应
+### 问题 2: 对话无响应
 ```
 ⚠️ 将使用预设对话模式
 ```
-**解决**: 系统自动降级到预设对话,不影响基本功能
+**解决**: 系统自动降级到预设对话，不影响基本功能
 
-### 问题3: CORS错误
+### 问题 3: CORS 错误
 **解决**: 检查`config.py`中的`CORS_ORIGINS`配置
 
 ## 📝 开发建议
 
-### 添加新NPC
+### 添加新 NPC
 1. 在`agents.py`的`NPC_ROLES`中添加配置
 2. 在`batch_generator.py`的`preset_dialogues`中添加预设对话
 3. 重启服务

@@ -1,4 +1,4 @@
-# 🎮 赛博小镇 - GDScript脚本说明
+# 🎮 赛博小镇 - GDScript 脚本说明
 
 ## 📁 脚本文件列表
 
@@ -35,18 +35,18 @@ var speed = Config.PLAYER_SPEED
 
 ---
 
-### 2. api_client.gd (API客户端)
-**用途**: 与FastAPI后端通信
+### 2. api_client.gd (API 客户端)
+**用途**: 与 FastAPI 后端通信
 
 **主要方法**:
 - `send_chat(npc_name, message)` - 发送对话
-- `get_npc_status()` - 获取NPC状态
-- `get_npc_list()` - 获取NPC列表
+- `get_npc_status()` - 获取 NPC 状态
+- `get_npc_list()` - 获取 NPC 列表
 
 **信号**:
 - `chat_response_received(npc_name, message)` - 收到对话回复
 - `chat_error(error_message)` - 对话错误
-- `npc_status_received(dialogues)` - 收到NPC状态
+- `npc_status_received(dialogues)` - 收到 NPC 状态
 
 **使用示例**:
 ```gdscript
@@ -70,8 +70,8 @@ func _on_response(npc_name, message):
 
 **关键功能**:
 - WASD/方向键移动
-- E键与NPC交互
-- 检测附近的NPC
+- E 键与 NPC 交互
+- 检测附近的 NPC
 
 **节点要求**:
 ```
@@ -88,13 +88,13 @@ Player (CharacterBody2D)
 
 ---
 
-### 4. npc.gd (NPC行为)
-**用途**: NPC交互和状态显示
+### 4. npc.gd (NPC 行为)
+**用途**: NPC 交互和状态显示
 
 **关键功能**:
 - 检测玩家进入/离开交互范围
-- 显示NPC名字和对话
-- 更新NPC状态
+- 显示 NPC 名字和对话
+- 更新 NPC 状态
 
 **节点要求**:
 ```
@@ -113,19 +113,19 @@ NPC (Node2D)
 ```
 
 **使用方法**:
-1. 在Inspector中设置NPC名字和职位
+1. 在 Inspector 中设置 NPC 名字和职位
 2. 脚本会自动处理交互逻辑
 
 ---
 
-### 5. dialogue_ui.gd (对话UI)
+### 5. dialogue_ui.gd (对话 UI)
 **用途**: 对话界面管理
 
 **关键功能**:
 - 显示/隐藏对话框
 - 处理玩家输入
 - 显示对话历史
-- 与API通信
+- 与 API 通信
 
 **节点要求**:
 ```
@@ -151,8 +151,8 @@ get_tree().call_group("dialogue_system", "start_dialogue", "张三")
 **用途**: 管理整个游戏场景
 
 **关键功能**:
-- 定时更新NPC状态
-- 分发NPC对话到各个NPC节点
+- 定时更新 NPC 状态
+- 分发 NPC 对话到各个 NPC 节点
 - 协调各个系统
 
 **节点要求**:
@@ -171,31 +171,31 @@ Main (Node2D)
 
 ## 🔧 如何使用这些脚本
 
-### 步骤1: 设置AutoLoad
-在 `Project -> Project Settings -> AutoLoad` 中添加:
-- `config.gd` -> 名称: `Config`
-- `api_client.gd` -> 名称: `APIClient`
+### 步骤 1: 设置 AutoLoad
+在 `Project -> Project Settings -> AutoLoad` 中添加：
+- `config.gd` -> 名称： `Config`
+- `api_client.gd` -> 名称： `APIClient`
 
-### 步骤2: 附加脚本到场景
+### 步骤 2: 附加脚本到场景
 - `player.tscn` -> 附加 `player.gd`
 - `npc.tscn` -> 附加 `npc.gd`
 - `dialogue_ui.tscn` -> 附加 `dialogue_ui.gd`
 - `main.tscn` -> 附加 `main.gd`
 
-### 步骤3: 配置节点
+### 步骤 3: 配置节点
 确保每个场景的节点结构与脚本要求一致。
 
-### 步骤4: 设置参数
-在Inspector中设置导出参数(如NPC名字、速度等)。
+### 步骤 4: 设置参数
+在 Inspector 中设置导出参数(如 NPC 名字、速度等)。
 
 ---
 
 ## 🐛 调试技巧
 
 ### 查看日志
-所有脚本都使用 `Config.log_info()` 输出日志,在Godot的 **Output** 面板查看。
+所有脚本都使用 `Config.log_info()` 输出日志，在 Godot 的 **Output** 面板查看。
 
-### 常见日志:
+### 常见日志：
 ```
 [INFO] API客户端初始化完成
 [INFO] 玩家初始化完成
@@ -206,7 +206,7 @@ Main (Node2D)
 ```
 
 ### 启用调试模式
-在 `config.gd` 中:
+在 `config.gd` 中：
 ```gdscript
 const DEBUG_MODE = true  # 显示详细日志
 const SHOW_INTERACTION_RANGE = true  # 显示交互范围
@@ -246,42 +246,42 @@ dialogue_ui.gd: _on_chat_response_received()
 
 ## 🎯 扩展建议
 
-### 添加新NPC
+### 添加新 NPC
 1. 在 `main.tscn` 中实例化 `npc.tscn`
-2. 设置NPC名字和位置
+2. 设置 NPC 名字和位置
 3. 在 `main.gd` 的 `get_npc_node()` 中添加映射
 
 ### 添加新功能
 1. 在 `config.gd` 中添加配置
-2. 在 `api_client.gd` 中添加新API方法
+2. 在 `api_client.gd` 中添加新 API 方法
 3. 在相应脚本中实现逻辑
 
 ### 优化性能
 1. 减少 `NPC_STATUS_UPDATE_INTERVAL` 的更新频率
-2. 使用对象池管理UI元素
-3. 优化TileMap的碰撞层
+2. 使用对象池管理 UI 元素
+3. 优化 TileMap 的碰撞层
 
 ---
 
 ## 📚 参考资源
 
-- **Godot文档**: https://docs.godotengine.org/
-- **GDScript教程**: https://gdscript.com/
-- **FastAPI文档**: https://fastapi.tiangolo.com/
+- **Godot 文档**: https://docs.godotengine.org/
+- **GDScript 教程**: https://gdscript.com/
+- **FastAPI 文档**: https://fastapi.tiangolo.com/
 
 ---
 
 ## ❓ 常见问题
 
-**Q: 如何修改API地址?**
+**Q: 如何修改 API 地址？**
 A: 编辑 `config.gd` 中的 `API_BASE_URL`
 
-**Q: 如何添加更多NPC?**
-A: 实例化 `npc.tscn`,设置参数,在 `main.gd` 中添加引用
+**Q: 如何添加更多 NPC?**
+A: 实例化 `npc.tscn`，设置参数，在 `main.gd` 中添加引用
 
-**Q: 如何自定义对话框样式?**
-A: 编辑 `dialogue_ui.tscn`,修改Panel和Label的主题
+**Q: 如何自定义对话框样式？**
+A: 编辑 `dialogue_ui.tscn`，修改 Panel 和 Label 的主题
 
-**Q: 如何禁用调试日志?**
+**Q: 如何禁用调试日志？**
 A: 在 `config.gd` 中设置 `DEBUG_MODE = false`
 

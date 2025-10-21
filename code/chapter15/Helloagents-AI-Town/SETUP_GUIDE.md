@@ -2,32 +2,32 @@
 
 ## 📋 系统要求
 
-- **操作系统:** Windows 10/11, macOS, Linux
-- **Godot:** 4.2+ (推荐4.3)
+- **操作系统：** Windows 10/11, macOS, Linux
+- **Godot:** 4.2+ (推荐 4.3)
 - **Python:** 3.10+
-- **Git:** (可选,用于克隆项目)
+- **Git:** (可选，用于克隆项目)
 
 ## 🚀 安装步骤
 
-### 步骤1: 下载项目
+### 步骤 1: 下载项目
 
-**方法A: 使用Git**
+**方法 A: 使用 Git**
 ```bash
 git clone https://github.com/datawhalechina/hello-agents
 cd chapter15
 ```
 
-**方法B: 下载ZIP**
-1. 下载项目ZIP文件
+**方法 B: 下载 ZIP**
+1. 下载项目 ZIP 文件
 2. 解压到任意目录
 
-### 步骤2: 安装Godot
+### 步骤 2: 安装 Godot
 
 1. 访问 [Godot官网](https://godotengine.org/download)
-2. 下载Godot 4.2+版本
-3. 解压并运行Godot
+2. 下载 Godot 4.2+版本
+3. 解压并运行 Godot
 
-### 步骤3: 配置Python环境
+### 步骤 3: 配置 Python 环境
 
 #### 3.1 创建虚拟环境
 ```bash
@@ -51,21 +51,21 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-#### 3.4 安装HelloAgents
+#### 3.4 安装 HelloAgents
 ```bash
 cd ../HelloAgents
 pip install -e .
 cd ../backend
 ```
 
-### 步骤4: 配置环境变量
+### 步骤 4: 配置环境变量
 
 #### 4.1 复制环境变量文件
 ```bash
 cp .env.example .env
 ```
 
-#### 4.2 编辑.env文件
+#### 4.2 编辑。env 文件
 ```env
 # API配置
 API_HOST=0.0.0.0
@@ -80,16 +80,16 @@ LLM_MODEL=gpt-4
 NPC_UPDATE_INTERVAL=30
 ```
 
-**重要:** 请将 `LLM_API_KEY` 替换为你的实际API密钥!
+**重要：** 请将 `LLM_API_KEY` 替换为你的实际 API 密钥！
 
-### 步骤5: 启动后端服务
+### 步骤 5: 启动后端服务
 
 ```bash
 cd backend
 python main.py
 ```
 
-**预期输出:**
+**预期输出：**
 ```
 📝 对话日志文件: .../backend/logs/dialogue_2025-10-15.log
 📂 日志目录: .../backend/logs
@@ -104,30 +104,30 @@ python main.py
 ============================================================
 ```
 
-### 步骤6: 打开Godot项目
+### 步骤 6: 打开 Godot 项目
 
-1. 启动Godot
+1. 启动 Godot
 2. 点击"导入"
 3. 选择 `chapter15/Game/project.godot`
 4. 点击"导入并编辑"
 
-### 步骤7: 运行游戏
+### 步骤 7: 运行游戏
 
-1. 在Godot编辑器中,点击右上角的"运行"按钮 (或按F5)
+1. 在 Godot 编辑器中，点击右上角的"运行"按钮 (或按 F5)
 2. 游戏窗口应该打开
-3. 使用WASD移动,E键与NPC交互
+3. 使用 WASD 移动，E 键与 NPC 交互
 
 ## 🎮 游戏操作
 
 - **WASD** - 移动玩家
-- **E** - 与NPC交互
+- **E** - 与 NPC 交互
 - **Enter** - 发送消息
 - **ESC** - 关闭对话框
 
 ## 🧪 测试
 
-### 测试后端API
-访问: http://localhost:8000/docs
+### 测试后端 API
+访问： http://localhost:8000/docs
 
 ### 查看对话日志
 ```bash
@@ -137,25 +137,25 @@ python view_logs.py tail
 
 ## ❓ 常见问题
 
-### Q1: 后端启动失败?
-**A:** 检查:
-1. Python版本是否>=3.10
+### Q1: 后端启动失败？
+**A:** 检查：
+1. Python 版本是否>=3.10
 2. 是否激活了虚拟环境
 3. 是否安装了所有依赖
-4. .env文件是否配置正确
+4. .env 文件是否配置正确
 
-### Q2: Godot无法打开项目?
-**A:** 检查:
-1. Godot版本是否>=4.2
-2. project.godot文件是否存在
+### Q2: Godot 无法打开项目？
+**A:** 检查：
+1. Godot 版本是否>=4.2
+2. project.godot 文件是否存在
 3. 是否选择了正确的目录
 
-### Q3: 游戏运行但无法对话?
-**A:** 检查:
+### Q3: 游戏运行但无法对话？
+**A:** 检查：
 1. 后端服务是否正在运行
 2. 后端地址是否正确 (默认http://localhost:8000)
-3. 查看Godot控制台的错误信息
+3. 查看 Godot 控制台的错误信息
 
-## 🎉 开始体验!
+## 🎉 开始体验！
 
-现在你可以在游戏中与NPC对话了!
+现在你可以在游戏中与 NPC 对话了！

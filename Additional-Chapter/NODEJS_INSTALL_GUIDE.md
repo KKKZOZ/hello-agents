@@ -13,14 +13,14 @@
 
 ## 为什么需要安装 Node.js？
 
-在第十章的MCP协议学习中，我们需要使用社区提供的MCP服务器，这些服务器大多数是用JavaScript/TypeScript编写的，需要Node.js运行环境。
+在第十章的 MCP 协议学习中，我们需要使用社区提供的 MCP 服务器，这些服务器大多数是用 JavaScript/TypeScript 编写的，需要 Node.js 运行环境。
 
-**安装Node.js后你将获得**：
-- ✅ **node**: JavaScript运行时
-- ✅ **npm**: Node包管理器（Node Package Manager）
-- ✅ **npx**: npm包执行器（自动下载并运行npm包）
+**安装 Node.js 后你将获得**：
+- ✅ **node**: JavaScript 运行时
+- ✅ **npm**: Node 包管理器（Node Package Manager）
+- ✅ **npx**: npm 包执行器（自动下载并运行 npm 包）
 
-**npx的作用**：
+**npx 的作用**：
 ```bash
 # 传统方式：需要先安装再运行
 npm install -g @modelcontextprotocol/server-filesystem
@@ -34,19 +34,19 @@ npx @modelcontextprotocol/server-filesystem
 
 ## Windows 安装教程
 
-### 方式1：官方安装包（推荐）
+### 方式 1：官方安装包（推荐）
 
-#### 步骤1：下载安装包
+#### 步骤 1：下载安装包
 
-访问Node.js官网：https://nodejs.org/
+访问 Node.js 官网：https://nodejs.org/
 
 你会看到两个版本：
 - **LTS（长期支持版）**：推荐大多数用户使用 ✅
 - **Current（最新版）**：包含最新特性
 
-**推荐下载LTS版本**（例如：20.x.x LTS）
+**推荐下载 LTS 版本**（例如：20.x.x LTS）
 
-#### 步骤2：运行安装程序
+#### 步骤 2：运行安装程序
 
 1. 双击下载的 `.msi` 文件
 2. 点击 "Next" 开始安装
@@ -59,7 +59,7 @@ npx @modelcontextprotocol/server-filesystem
 6. 点击 "Install" 开始安装
 7. 等待安装完成，点击 "Finish"
 
-#### 步骤3：验证安装
+#### 步骤 3：验证安装
 
 打开 **PowerShell** 或 **命令提示符**（CMD），输入：
 
@@ -83,22 +83,22 @@ npx -v
 
 ## macOS 安装教程
 
-### 方式1：官方安装包
+### 方式 1：官方安装包
 
-#### 步骤1：下载安装包
+#### 步骤 1：下载安装包
 
 访问：https://nodejs.org/
 
-下载 **LTS版本** 的 `.pkg` 文件
+下载 **LTS 版本** 的 `.pkg` 文件
 
-#### 步骤2：安装
+#### 步骤 2：安装
 
 1. 双击 `.pkg` 文件
 2. 按照安装向导提示操作
 3. 输入管理员密码
 4. 完成安装
 
-#### 步骤3：验证安装
+#### 步骤 3：验证安装
 
 打开 **终端（Terminal）**，输入：
 
@@ -114,7 +114,7 @@ npx -v
 
 ### Ubuntu/Debian
 
-#### 方式1：使用NodeSource仓库（推荐）
+#### 方式 1：使用 NodeSource 仓库（推荐）
 
 ```bash
 # 更新包列表
@@ -135,7 +135,7 @@ npm -v
 npx -v
 ```
 
-#### 方式2：使用apt（版本可能较旧）
+#### 方式 2：使用 apt（版本可能较旧）
 
 ```bash
 sudo apt update
@@ -217,9 +217,9 @@ Node.js 工作正常！
 
 ---
 
-## 测试MCP服务器连接
+## 测试 MCP 服务器连接
 
-安装完成后，测试连接到社区MCP服务器：
+安装完成后，测试连接到社区 MCP 服务器：
 
 ### 测试文件系统服务器
 
@@ -230,7 +230,7 @@ npx -y @modelcontextprotocol/server-filesystem .
 
 如果看到服务器启动信息，说明一切正常！
 
-### 在Python中测试
+### 在 Python 中测试
 
 创建测试脚本 `test_mcp.py`：
 
@@ -288,7 +288,7 @@ source ~/.bashrc  # 或 source ~/.zshrc
 
 ---
 
-### Q2: npm速度很慢
+### Q2: npm 速度很慢
 
 使用国内镜像源（淘宝镜像）：
 
@@ -305,7 +305,7 @@ npm config get registry
 
 ---
 
-### Q3: npx权限错误
+### Q3: npx 权限错误
 
 **Windows**:
 ```powershell
@@ -326,7 +326,7 @@ source ~/.bashrc
 
 ### Q4: 版本冲突
 
-如果需要管理多个Node.js版本，推荐使用版本管理工具：
+如果需要管理多个 Node.js 版本，推荐使用版本管理工具：
 
 **Windows**: [nvm-windows](https://github.com/coreybutler/nvm-windows)
 
@@ -349,7 +349,7 @@ nvm use 20
 
 ---
 
-### Q5: npx下载包很慢
+### Q5: npx 下载包很慢
 
 ```bash
 # 方式1：使用国内镜像
@@ -366,19 +366,19 @@ server-filesystem
 
 安装完成后，你可以：
 
-1. ✅ 运行 `code/02_Connect2MCP.py` 测试MCP客户端连接
-2. ✅ 探索社区MCP服务器：https://github.com/modelcontextprotocol/servers
+1. ✅ 运行 `code/02_Connect2MCP.py` 测试 MCP 客户端连接
+2. ✅ 探索社区 MCP 服务器：https://github.com/modelcontextprotocol/servers
 3. ✅ 继续学习第十章的其他内容
 
 ---
 
 ## 参考资源
 
-- **Node.js官网**: https://nodejs.org/
-- **npm文档**: https://docs.npmjs.com/
-- **npx文档**: https://docs.npmjs.com/cli/v10/commands/npx
-- **MCP服务器列表**: https://github.com/modelcontextprotocol/servers
-- **淘宝npm镜像**: https://npmmirror.com/
+- **Node.js 官网**: https://nodejs.org/
+- **npm 文档**: https://docs.npmjs.com/
+- **npx 文档**: https://docs.npmjs.com/cli/v10/commands/npx
+- **MCP 服务器列表**: https://github.com/modelcontextprotocol/servers
+- **淘宝 npm 镜像**: https://npmmirror.com/
 
 ---
 
