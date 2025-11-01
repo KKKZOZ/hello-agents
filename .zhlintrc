@@ -1,0 +1,9 @@
+{
+  "rules": {
+    "halfwidthPunctuation": "",
+    "fullwidthPunctuation": "",
+    "unifiedPunctuation": "simplified",
+    "adjustedFullwidthPunctuation": "",
+    "spaceBetweenMixedwidthContent": true
+  }
+}
